@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>WAR Assistant - Ànima Mediterrània</title>
+
+    <meta name="author" content="Gonzalo Gonz&aacute;lez" />
+    <meta
+      name="description"
+      content="A lightweight, low-cost digital assistant 
+    designed for small restaurants. It automates reservations, digitizes paper-based 
+    workflows, prevents double bookings, and generates daily operational summaries."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="Images/favicon.svg" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="images/favicons/favicon-64.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/favicons/favicon-192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="images/favicons/favicon-512.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicons/apple-touch-icon.png"
+    />
+
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="" defer></script>
+  </head>
+
+  <body>
+    <header class="app-header">
+      <div class="app-logo">
+        <img
+          src="images/favicons/favicon.svg"
+          alt="WAR Assistant Logo"
+          class="logo-icon"
+        />
+        <div class="logo-text">
+          <span class="logo-name">WAR Assistant</span>
+          <span class="logo-subtitle">WhatsApp Reservation Assistant</span>
+        </div>
+      </div>
+      <div class="app-venue">Ànima Mediterrània</div>
+    </header>
+
+    <div class="app-shell">
+      <nav class="app-sidebar">
+        <button class="nav-link active" data-target="view-landing">
+          Dashboard
+        </button>
+        <button class="nav-link" data-target="view-new-reservation">
+          New Reservation
+        </button>
+        <button class="nav-link" data-target="view-reservations">
+          Today's Reservations
+        </button>
+      </nav>
+
+      <main class="app-main">
+        <!-- Landing / Dashboard -->
+        <section id="view-landing" class="view active">
+          <h1 class="view-title">Welcome, Alejo Werner</h1>
+          <p class="view-subtitle">
+            WAR Assistant helps you turn WhatsApp messages into clean
+            reservations with one tap.
+          </p>
+
+          <div class="dashboard-grid">
+            <div class="card card-highlight">
+              <h2>Start with a new WhatsApp request</h2>
+              <p>
+                Paste the guest’s message and let WAR Assistant structure it for
+                you.
+              </p>
+              <button class="primary-btn" data-target="view-new-reservation">
+                New reservation from WhatsApp
+              </button>
+            </div>
+
+            <div class="card">
+              <h3>Today's overview</h3>
+              <div class="stats-row">
+                <div class="stat">
+                  <div class="stat-label">Total bookings</div>
+                  <div class="stat-value">5</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Terrace requests</div>
+                  <div class="stat-value">3</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Capacity at 21:00</div>
+                  <div class="stat-value">35%</div>
+                </div>
+              </div>
+              <button class="ghost-btn" data-target="view-reservations">
+                View today's reservations
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- New Reservation (Main Screen) -->
+        <section id="view-new-reservation" class="view">
+          <h1 class="view-title">New Reservation from WhatsApp</h1>
+          <p class="view-subtitle">
+            This is your main screen for turning guest messages into structured
+            bookings.
+          </p>
+
+          <div class="two-column-layout">
+            <!-- WhatsApp-like message -->
+            <div class="card card-whatsapp">
+              <div class="whatsapp-header">
+                <span class="whatsapp-contact">Anna López</span>
+                <span class="whatsapp-meta">Today · WhatsApp</span>
+              </div>
+              <div class="whatsapp-bubble">
+                Hi! I’d like to book a table for 4 people on Friday 15th at
+                21:00, on the terrace if possible please.
+              </div>
+              <div class="whatsapp-bubble">654 123 456</div>
+              <div class="whatsapp-bubble">anna@example.es</div>
+              <div class="whatsapp-note">
+                (In the full version, you’ll paste or select real messages
+                here.)
+              </div>
+            </div>
+
+            <!-- Parsed reservation (static for now) -->
+            <div class="card card-form">
+              <h2>Reservation draft</h2>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label>Guest name</label>
+                  <input type="text" value="Anna López" readonly />
+                </div>
+                <div class="form-field">
+                  <label>Party size</label>
+                  <input type="text" value="4" readonly />
+                </div>
+                <div class="form-field">
+                  <label>Date</label>
+                  <input type="text" value="Friday 15th" readonly />
+                </div>
+                <div class="form-field">
+                  <label>Time</label>
+                  <input type="text" value="21:00" readonly />
+                </div>
+                <div class="form-field">
+                  <label>Area preference</label>
+                  <input type="text" value="Terrace (if possible)" readonly />
+                </div>
+                <div class="form-field">
+                  <label>Notes</label>
+                  <textarea rows="2" readonly>
+Requested terrace seating.</textarea
+                  >
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="ghost-btn" data-target="view-landing">
+                  Cancel
+                </button>
+                <button class="primary-btn" id="btn-preview-confirmation">
+                  Preview confirmation message
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Confirmation Screen -->
+        <section id="view-confirmation" class="view">
+          <h1 class="view-title">Confirmation message</h1>
+          <p class="view-subtitle">
+            This is what WAR Assistant suggests sending back to the guest.
+          </p>
+
+          <div class="confirmation-layout">
+            <div class="card card-summary">
+              <h2>Reservation summary</h2>
+              <ul class="summary-list">
+                <li><span>Guest:</span> Anna López</li>
+                <li><span>Phone:</span> 654 123 456</li>
+                <li><span>Email:</span> anna@example.es</li>
+                <li><span>People:</span> 4</li>
+                <li><span>Date:</span> Friday 15th</li>
+                <li><span>Time:</span> 21:00</li>
+                <li><span>Area:</span> Terrace (if possible)</li>
+              </ul>
+              <p class="summary-note">
+                In the full MVP, you’ll be able to adjust these details and sync
+                them with the live reservations board.
+              </p>
+            </div>
+
+            <div class="card card-confirm-bubble">
+              <div class="confirm-label">WhatsApp reply</div>
+              <div class="confirm-bubble">
+                Thank you, Anna López! 👋 Your booking for 4 people on Friday
+                15th at 21:00 at Ànima Mediterrània is being processed now.
+                We’ll do our best to seat you in the terrace if possible.
+                <br /><br />
+                Thank you! Processing your booking now…
+              </div>
+
+              <div class="confirmation-actions">
+                <button class="ghost-btn" data-target="view-new-reservation">
+                  Back to reservation
+                </button>
+                <button class="primary-btn" data-target="view-reservations">
+                  Mark as confirmed &amp; go to today's reservations
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Today's Reservations Table -->
+        <section id="view-reservations" class="view">
+          <h1 class="view-title">Today's reservations</h1>
+          <p class="view-subtitle">
+            Prototype view of how WAR Assistant could present your service.
+          </p>
+
+          <div class="card">
+            <div class="table-header-row">
+              <h2>Service · Friday 15th</h2>
+              <span class="table-caption"
+                >5 reservations · last one shaded as “just confirmed”</span
+              >
+            </div>
+            <div class="table-wrapper">
+              <table class="reservations-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Guest</th>
+                    <th>Phone</th>
+                    <th>Pax</th>
+                    <th>Area</th>
+                    <th>Source</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20:00</td>
+                    <td>Marco Rossi</td>
+                    <td>612 222 111</td>
+                    <td>4</td>
+                    <td>Indoor</td>
+                    <td>Phone</td>
+                    <td>Anniversary</td>
+                  </tr>
+                  <tr>
+                    <td>20:30</td>
+                    <td>Eva Pérez</td>
+                    <td>693 555 111</td>
+                    <td>5</td>
+                    <td>Terrace</td>
+                    <td>Google</td>
+                    <td>High chair</td>
+                  </tr>
+                  <tr>
+                    <td>20:45</td>
+                    <td>Júlia Torres</td>
+                    <td>678 000 000</td>
+                    <td>4</td>
+                    <td>Indoor</td>
+                    <td>OTA</td>
+                    <td>Vegan options</td>
+                  </tr>
+                  <tr>
+                    <td>21:00</td>
+                    <td>Víctor Martínez</td>
+                    <td>644 777 777</td>
+                    <td>3</td>
+                    <td>Terrace</td>
+                    <td>WhatsApp</td>
+                    <td>Window table if indoor</td>
+                  </tr>
+                  <!-- Last confirmed / highlighted -->
+                  <tr class="row-last-confirmed">
+                    <td>21:00</td>
+                    <td>Anna López</td>
+                    <td>654 123 456</td>
+                    <td>4</td>
+                    <td>Terrace (if possible)</td>
+                    <td>WhatsApp · WAR Assistant</td>
+                    <td>Last confirmed via assistant</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-footer-actions">
+              <button class="ghost-btn" data-target="view-landing">
+                Back to dashboard
+              </button>
+              <button class="primary-btn" data-target="view-new-reservation">
+                Add another WhatsApp reservation
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Confirmation modal -->
+    <div
+      id="reservation-confirmation"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="reservation-confirmation-title"
+    >
+      <div class="modal-content">
+        <h2 id="reservation-confirmation-title">Reservation confirmed</h2>
+
+        <p><strong>Date:</strong> 15/05/2025</p>
+        <p><strong>Time:</strong> 21:00</p>
+        <p><strong>Guests:</strong> 4</p>
+        <p><strong>Name:</strong> Anna López</p>
+        <p><strong>Phone:</strong> 654 123 456</p>
+        <p><strong>Email:</strong> anna@example.es</p>
+        <p><strong>Notes:</strong> Terrace</p>
+
+        <button id="confirm-ok" class="primary-btn">OK</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-top">
+        <span class="footer-brand">WAR Assistant</span>
+        <span class="footer-dot">·</span>
+        <span class="footer-venue">Ànima Mediterrània (Prototype)</span>
+      </div>
+
+      <div class="footer-social">
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <img src="images/icons/icon-linkedin.svg" alt="" />
+        </a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <img src="images/icons/icon-instagram.svg" alt="" />
+        </a>
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          aria-label="Twitter / X"
+        >
+          <img src="images/icons/icon-x.svg" alt="" />
+        </a>
+        <a href="https://github.com" target="_blank" aria-label="GitHub">
+          <img src="images/icons/icon-github.svg" alt="" />
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 WAR Assistant · All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

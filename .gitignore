@@ -1,0 +1,11 @@
+# Ignore editor history folders
+.history/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Node / tooling (in case you add them later)
+node_modules/
+dist/
+.vscode/
