@@ -14,12 +14,12 @@ function showView(id) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Elements used in the confirmation flow ---
+  // Elements used in the confirmation flow
   const previewBtn = document.getElementById("btn-preview-confirmation");
   const confirmModal = document.getElementById("reservation-confirmation");
   const confirmOkBtn = document.getElementById("confirm-ok");
 
-  // This is the button: “Mark as confirmed & go to today's reservations”
+  // Button: “Mark as confirmed & go to today's reservations”
   const markConfirmedBtn = document.querySelector(
     '#view-confirmation .primary-btn[data-target="view-reservations"]'
   );
@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2) Confirmation flow:
-  //    Click "Mark as confirmed & go..." -> show modal.
-  //    Click "OK" in modal -> close modal and go to today's reservations.
+  //    Click "Mark as confirmed & go..." -> show modal
+  //    Click "OK" in modal -> close modal and go to today's reservations
   if (markConfirmedBtn && confirmModal && confirmOkBtn) {
     markConfirmedBtn.addEventListener("click", (event) => {
       event.preventDefault(); // avoid generic data-target navigation
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 3) Generic handler: any element with data-target switches view,
-  //    EXCEPT the two buttons that have custom behaviour above.
+  //    EXCEPT the two buttons that have custom behaviour above
   document.querySelectorAll("[data-target]").forEach((el) => {
     if (el === previewBtn || el === markConfirmedBtn) {
       return; // skip, already wired with specific logic
