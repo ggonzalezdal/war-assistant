@@ -1,9 +1,17 @@
 # WAR Assistant · WhatsApp Reservation Assistant
 
-[![Live demo](https://img.shields.io/badge/demo-online-4dd6b9?style=for-the-badge&logo=github&logoColor=white)](https://ggonzalezdal.github.io/war-assistant/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-4dd6b9?style=for-the-badge)](LICENSE)
-![Status](https://img.shields.io/badge/status-MVP%20prototype-0b1120?style=for-the-badge)
-![Built with](https://img.shields.io/badge/built_with-HTML5%20·%20CSS3%20·%20JS-111827?style=for-the-badge)
+<p align="center">
+  <a href="https://ggonzalezdal.github.io/war-assistant/">
+    <img src="https://img.shields.io/badge/demo-online-4dd6b9?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-4dd6b9?style=for-the-badge" />
+  </a>
+  <img src="https://img.shields.io/badge/status-MVP%20prototype-0b1120?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/built_with-HTML5%20·%20CSS3%20·%20JS-111827?style=for-the-badge" />
+</p>
+
+---
 
 **WAR Assistant** is a lightweight prototype of a WhatsApp-driven reservation assistant for small restaurants. It is part of an Entrepreneurship project at the **UOC (Universitat Oberta de Catalunya)** and demonstrates how a simple web app can help turn chaotic WhatsApp bookings into structured, usable reservation data.
 
