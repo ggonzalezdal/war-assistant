@@ -88,6 +88,14 @@ body {
   font-family: var(--font-brand2);
 }
 
+.nav-clickable {
+  cursor: pointer;
+}
+
+.nav-clickable:hover {
+  opacity: 0.85;
+}
+
 /* Shell */
 
 .app-shell {
