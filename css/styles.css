@@ -17,6 +17,8 @@
     sans-serif;
   --font-brand: "Exo 2", system-ui, sans-serif;
   --font-brand2: "Rajdhani", system-ui, sans-serif;
+
+  --footer-h: 75px;
 }
 
 *,
@@ -31,6 +33,10 @@ body {
   font-family: var(--font-main);
   color: var(--text-main);
   background: radial-gradient(circle at top, #1f2937, #020617 55%);
+}
+
+.main {
+  padding-bottom: calc(var(--footer-h) + 24px);
 }
 
 /* Header */
@@ -523,7 +529,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 75px;
+  height: var(--footer-h);
   padding: 8px 16px;
 
   background: linear-gradient(
@@ -620,5 +626,16 @@ body {
   .confirmation-layout,
   .dashboard-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-footer {
+    position: static;
+    height: auto;
+  }
+
+  .main {
+    padding-bottom: 24px;
   }
 }
